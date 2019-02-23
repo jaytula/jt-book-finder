@@ -1,0 +1,11 @@
+{
+  "restart": {
+    "exclude": [
+      "^src/"
+     ],
+    "include": [
+      "\\.js$",
+      "\\.json$"
+      ]
+  }
+}
