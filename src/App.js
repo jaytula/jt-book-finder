@@ -40,12 +40,14 @@ class App extends React.Component {
     ));
     return (
       <div>
-        <h1>Book Search</h1>
-        <form onSubmit={this.doSearch}>
-          <label htmlFor="q">Search Query</label>
-          <input id="q" type="text" name="q" />
-          <button type="submit">Submit</button>
-        </form>
+        <header>
+          <h1>Book Search</h1>
+          <form onSubmit={this.doSearch}>
+            <input id="q" type="text" name="q" />
+            <button type="submit">Submit</button>
+          </form>
+        </header>
+
         <div id="results">{volumeElems}</div>
       </div>
     );

@@ -1,6 +1,24 @@
 body {
-  background: #4219ef;
-  color: white;
+  color: black;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+header {
+  background: #e1e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+header h1 {
+  margin: 0.2rem;
+}
+
+header form {
+  display: block;
 }
 
 #results {
@@ -9,5 +27,19 @@ body {
 }
 
 .book-card {
-  background: red;
+  background: #3a4660;
+  color: white;
+  margin: 2px 4px;
+  padding: 4px 6px;
+  border-radius: 10px;
+}
+
+.book-card a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.book-card:hover {
+  opacity: 0.75;
+  cursor: pointer;
 }
