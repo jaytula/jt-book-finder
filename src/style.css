@@ -1,0 +1,13 @@
+body {
+  background: #4219ef;
+  color: white;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card {
+  background: red;
+}

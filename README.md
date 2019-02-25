@@ -28,6 +28,10 @@ search for books
 - Handle edge cases
 - Add loading and error states after API call
 
+## Webpack work
+
+- Setup MiniCssExtractPlugin to extract CSS to a separate file.:j
+
 ## Bonus Considerations
 
 - Make it mobile responsive
