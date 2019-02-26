@@ -25,9 +25,12 @@ if (DEBUG) {
 }
 
 app.use(express.static('public'));
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
+
+if (DEBUG) {
+  app.get('/', function(request, response) {
+    response.sendFile(__dirname + '/views/index.html');
+  });
+}
 
 app.get('/lookup', async (req, res) => {
   const {q} = req.query;
