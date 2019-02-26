@@ -1,6 +1,5 @@
 import {hot} from 'react-hot-loader/root';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import BookCard from './BookCard';
 
@@ -17,9 +16,7 @@ class App extends React.Component {
     this.doSearch = this.doSearch.bind(this);
   }
 
-  componentDidMount() {
-    console.log('Mounted');
-  }
+  componentDidMount() {}
 
   async doSearch(event) {
     event.preventDefault();
