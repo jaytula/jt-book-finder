@@ -2,13 +2,14 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "name": "jt-book-finder",
+  "version": "0.0.2",
+  "description": "Chingu Pre-Work Book Finder Project",
   "main": "server.js",
   "scripts": {
-    "build": "webpack",
-    "start": "node server.js"
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@babel/core": "^7.2.0",
@@ -34,8 +35,5 @@
     "node": "10.x"
   },
   "license": "MIT",
-  "keywords": [
-    "node",
-    "express"
-  ]
+  "keywords": ["node", "express"]
 }
