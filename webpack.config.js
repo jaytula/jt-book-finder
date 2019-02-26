@@ -2,26 +2,28 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const mode = 'development';
+const mode = process.env.NODE_ENV;
 const DEBUG = mode !== 'production';
 
+console.log(`Webpack mode: ${mode}`);
+
 module.exports = {
-  mode: 'development',
+  mode,
   entry: {
     main: [
       '@babel/polyfill',
       './src/index.js',
-      'webpack-hot-middleware/client',
-    ],
+      DEBUG ? 'webpack-hot-middleware/client' : null,
+    ].filter(e => e),
   },
   output: {
     path: path.resolve(__dirname, 'public', 'dist'),
     filename: '[name].js',
   },
   plugins: [
-    new MiniCssExtractPlugin({filename: '[name].css'}),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+    DEBUG ? null : new MiniCssExtractPlugin({filename: '[name].css'}),
+    DEBUG ? new webpack.HotModuleReplacementPlugin() : null,
+  ].filter(e => e),
   module: {
     rules: [
       {
