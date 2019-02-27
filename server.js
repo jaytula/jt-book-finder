@@ -38,7 +38,7 @@ app.get('/lookup', async (req, res) => {
 
   try {
     let result = await axios.get(GBOOKS, {
-      params: {q, key: process.env.APIKEY},
+      params: {q, maxResults: 20, key: process.env.APIKEY},
     });
     res.json(result.data);
   } catch (err) {
