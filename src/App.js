@@ -14,12 +14,18 @@ class App extends React.Component {
       volumes: [],
       loading: false,
       error: null,
+      lastError: null,
     };
 
     this.doSearch = this.doSearch.bind(this);
+    this.clearError = this.clearError.bind(this);
   }
 
   componentDidMount() {}
+
+  clearError() {
+    this.setState({error: null});
+  }
 
   async doSearch(event) {
     event.preventDefault();
@@ -31,7 +37,8 @@ class App extends React.Component {
       let {data} = result;
       this.setState({volumes: data.items, loading: false, error: null});
     } catch (error) {
-      this.setState({loading: true, error});
+      this.setState({loading: false, error, lastError: error});
+      setTimeout(this.clearError, 2000);
       console.error(error);
     }
   }
@@ -53,8 +60,15 @@ class App extends React.Component {
         </header>
 
         <div id="results">{volumeElems}</div>
-        <div className={`loading ${this.state.loading ? 'd-block' : 'd-none'}`}>
+        <div
+          className={`loading-toast ${
+            this.state.loading ? 'd-block' : 'd-none'
+          }`}>
           Loading
+        </div>
+        <div
+          className={`error-toast ${this.state.error ? 'd-block' : 'd-none'}`}>
+          {this.state.error && this.state.error.message}
         </div>
       </div>
     );

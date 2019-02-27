@@ -70,8 +70,8 @@ header form {
 
 .book-card-right h3 {
   margin: 0px;
-  font-size: 14px;
   padding: 4px 0px;
+  font-size: 16px;
 }
 
 .book-card a:link,
@@ -95,7 +95,7 @@ header form {
   display: block;
 }
 
-.loading {
+.loading-toast {
   font-weight: bold;
   position: absolute;
   bottom: 1vh;
@@ -104,4 +104,30 @@ header form {
   color: white;
   padding: 4px 10px;
   border-radius: 8px;
+}
+
+.error-toast {
+  font-weight: bold;
+  position: absolute;
+  bottom: 1vh;
+  right: 1vh;
+  background: red;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.publisher {
+  font-style: italic;
+}
+
+.authorName {
+  background: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin: 0px 2px;
+}
+
+.book-info {
+  margin: 4px 0px;
 }

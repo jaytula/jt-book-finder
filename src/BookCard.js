@@ -24,7 +24,7 @@ class BookCard extends React.Component {
         <div className="noThumbnail">Image Unavaliable</div>
       );
     const authorsElem = authors ? (
-      <div>
+      <div className="book-info">
         by{' '}
         {authors.map((item, key) => (
           <span key={key} className="authorName">
@@ -42,8 +42,9 @@ class BookCard extends React.Component {
             <a href={canonicalVolumeLink}>{title}</a>
           </h3>
           {authorsElem}
-          <div className="publisher">
-            Publisher: {publisher || 'Unavailable'}
+          <div className="book-info">
+            published by{' '}
+            <span className="publisher">{publisher || 'Unavailable'}</span>
           </div>
         </div>
       </div>
