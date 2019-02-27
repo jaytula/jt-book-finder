@@ -12,6 +12,8 @@ class App extends React.Component {
 
     this.state = {
       volumes: [],
+      loading: false,
+      error: null,
     };
 
     this.doSearch = this.doSearch.bind(this);
@@ -24,11 +26,13 @@ class App extends React.Component {
     let formData = new FormData(event.target);
     let q = formData.get('q');
     try {
+      this.setState({loading: true});
       let result = await axios.get('/lookup', {params: {q}});
       let {data} = result;
-      this.setState({volumes: data.items});
-    } catch (err) {
-      console.error(err);
+      this.setState({volumes: data.items, loading: false, error: null});
+    } catch (error) {
+      this.setState({loading: true, error});
+      console.error(error);
     }
   }
 
@@ -49,6 +53,9 @@ class App extends React.Component {
         </header>
 
         <div id="results">{volumeElems}</div>
+        <div className={`loading ${this.state.loading ? 'd-block' : 'd-none'}`}>
+          Loading
+        </div>
       </div>
     );
   }

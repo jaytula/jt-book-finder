@@ -86,3 +86,22 @@ header form {
   color: #111;
   border-style: none;
 }
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.loading {
+  font-weight: bold;
+  position: absolute;
+  bottom: 1vh;
+  left: 1vh;
+  background: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
