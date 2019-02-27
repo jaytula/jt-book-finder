@@ -2,6 +2,7 @@ import {hot} from 'react-hot-loader/root';
 import React from 'react';
 import axios from 'axios';
 import BookCard from './BookCard';
+import Button from './Button';
 
 require('./style.css');
 
@@ -38,11 +39,13 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <h1>Book Search</h1>
-          <form onSubmit={this.doSearch}>
-            <input id="q" type="text" name="q" />
-            <button type="submit">Submit</button>
-          </form>
+          <h1>Book Finder</h1>
+          <div id="searchbox">
+            <form onSubmit={this.doSearch}>
+              <input id="q" type="text" name="q" placeholder="Search" />
+              <Button type="submit">Search</Button>
+            </form>
+          </div>
         </header>
 
         <div id="results">{volumeElems}</div>

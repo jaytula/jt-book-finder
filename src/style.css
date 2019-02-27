@@ -1,24 +1,30 @@
 body {
   color: black;
-  font-size: 0.85em;
   margin: 0;
 }
 
 header {
   background: #e1e8f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
 }
 
 header h1 {
-  margin: 0.2rem;
+  padding: 4px 8px;
+  margin: 0;
+  font-size: 16pt;
 }
 
 header form {
-  display: block;
+  display: flex;
+}
+
+#searchbox {
+  padding: 4px 4px;
+}
+
+#searchbox input {
+  flex: 1;
+  padding: 6px 10px 6px;
+  border: none;
 }
 
 #results {
@@ -27,19 +33,56 @@ header form {
 }
 
 .book-card {
-  background: #3a4660;
-  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #efefef;
+  color: black;
   margin: 2px 4px;
   padding: 4px 6px;
-  border-radius: 10px;
 }
 
-.book-card a:link {
-  color: red;
+.book-card-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.book-card-left img {
+  box-shadow: 2px 2px 2px 1px #333;
+  width: 128px;
+}
+
+.noThumbnail {
+  width: 128px;
+  height: 196px;
+  background: #ccc;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.book-card-right {
+  flex: 2;
+  padding: 4px 16px;
+  font-size: 12px;
+}
+
+.book-card-right h3 {
+  margin: 0px;
+  font-size: 14px;
+  padding: 4px 0px;
+}
+
+.book-card a:link,
+.book-card a:visited {
+  color: #333;
   text-decoration: none;
 }
 
-.book-card:hover {
-  opacity: 0.75;
-  cursor: pointer;
+.btn {
+  font-weight: bold;
+  background: #febd69;
+  color: #111;
+  border-style: none;
 }

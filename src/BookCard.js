@@ -20,18 +20,32 @@ class BookCard extends React.Component {
     const imageElem =
       imageLinks && 'thumbnail' in imageLinks ? (
         <img src={imageLinks.thumbnail} />
-      ) : null;
-    const authorsElem = authors ? <h4>Authors: {authors.join(', ')}</h4> : null;
+      ) : (
+        <div className="noThumbnail">Image Unavaliable</div>
+      );
+    const authorsElem = authors ? (
+      <div>
+        by{' '}
+        {authors.map((item, key) => (
+          <span key={key} className="authorName">
+            {item}
+          </span>
+        ))}
+      </div>
+    ) : null;
 
     return (
       <div className="book-card">
-        {imageElem}
-        <h3>
-          <a href={canonicalVolumeLink}>{title}</a>
-        </h3>
-        {authorsElem}
-        <h4>Publisher: {publisher || 'Unavailable'}</h4>
-        <p>{description}</p>
+        <div className="book-card-left">{imageElem}</div>
+        <div className="book-card-right">
+          <h3>
+            <a href={canonicalVolumeLink}>{title}</a>
+          </h3>
+          {authorsElem}
+          <div className="publisher">
+            Publisher: {publisher || 'Unavailable'}
+          </div>
+        </div>
       </div>
     );
   }
