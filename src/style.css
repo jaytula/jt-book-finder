@@ -29,7 +29,9 @@ header form {
 
 #results {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .book-card {
@@ -38,8 +40,9 @@ header form {
   align-items: flex-start;
   background: #efefef;
   color: black;
-  margin: 2px 4px;
-  padding: 4px 6px;
+  margin: 2px 0px;
+  padding: 4px 0px;
+  width: 100%;
 }
 
 .book-card-left {
@@ -78,6 +81,10 @@ header form {
 .book-card a:visited {
   color: #333;
   text-decoration: none;
+}
+
+.book-card a:hover {
+  color: #c45500;
 }
 
 .btn {
@@ -130,4 +137,11 @@ header form {
 
 .book-info {
   margin: 4px 0px;
+}
+
+@media (min-width: 640px) {
+  .book-card {
+    width: 49%;
+    margin: 0.1%;
+  }
 }
