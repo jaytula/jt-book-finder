@@ -93,8 +93,11 @@ class App extends React.Component {
                 name="q"
                 placeholder="Search"
                 autoComplete="off"
+                spellCheck="false"
               />
-              <Button type="submit">Search</Button>
+              <Button type="submit" disabled={this.state.loading}>
+                Search
+              </Button>
             </form>
           </div>
         </header>
