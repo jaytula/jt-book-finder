@@ -36,7 +36,9 @@ class BookCard extends React.Component {
 
     return (
       <div className="book-card">
-        <div className="book-card-left">{imageElem}</div>
+        <div className="book-card-left">
+          <a href={canonicalVolumeLink}>{imageElem}</a>
+        </div>
         <div className="book-card-right">
           <h3>
             <a href={canonicalVolumeLink}>{title}</a>
