@@ -58,8 +58,8 @@ class App extends React.Component {
     let q = formData.get('q');
     this.addSearchOption(q);
     let inputElem = document.getElementById('q');
-    inputElem.blur();
     inputElem.select();
+    inputElem.blur();
     try {
       this.setState({loading: true});
       let result = await axios.get('/lookup', {params: {q}});
@@ -95,8 +95,8 @@ class App extends React.Component {
                 name="q"
                 placeholder="Search"
                 autoComplete="off"
-                spellCheck="false"
-                required="true"
+                spellCheck={false}
+                required={true}
               />
               <Button type="submit" disabled={this.state.loading}>
                 Search
