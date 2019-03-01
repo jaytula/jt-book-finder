@@ -73,9 +73,11 @@ class App extends React.Component {
   }
 
   render() {
-    let volumeElems = this.state.volumes.map((vol, key) => (
-      <BookCard key={key} data={vol} />
-    ));
+    let volumeElems = this.state.volumes ? (
+      this.state.volumes.map((vol, key) => <BookCard key={key} data={vol} />)
+    ) : (
+      <div class="no-results">No results</div>
+    );
 
     let searchOptions = this.state.searchOptions.map((e, key) => (
       <option key={key} value={e} />
