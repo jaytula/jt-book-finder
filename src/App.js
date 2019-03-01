@@ -94,6 +94,7 @@ class App extends React.Component {
                 placeholder="Search"
                 autoComplete="off"
                 spellCheck="false"
+                required="true"
               />
               <Button type="submit" disabled={this.state.loading}>
                 Search
