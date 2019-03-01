@@ -1,6 +1,13 @@
 body {
   color: black;
   margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  max-width: 1180px;
+  width: 100%;
 }
 
 header {
@@ -79,12 +86,13 @@ header form {
 
 .book-card a:link,
 .book-card a:visited {
-  color: #333;
+  color: #0066c0;
   text-decoration: none;
 }
 
 .book-card a:hover {
   color: #c45500;
+  text-decoration: underline;
 }
 
 .btn {
