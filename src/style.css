@@ -12,7 +12,6 @@ body {
 
 header {
   background: #e1e8f0;
-  margin: 0px 11px;
   padding: 4px 10px;
 }
 
@@ -58,6 +57,7 @@ header form {
   flex: 1;
   display: flex;
   justify-content: center;
+  padding: 4px 6px;
 }
 
 .book-card-left img {
@@ -150,8 +150,18 @@ header form {
 }
 
 @media (min-width: 640px) {
-  .book-card {
-    width: 49%;
-    margin: 0.1%;
+  #results {
+    justify-content: space-between;
   }
+  .book-card {
+    width: 49.9%;
+  }
+}
+
+.no-results {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  width: 100%;
+  padding: 80px;
 }
