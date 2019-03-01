@@ -76,7 +76,7 @@ class App extends React.Component {
     let volumeElems = this.state.volumes ? (
       this.state.volumes.map((vol, key) => <BookCard key={key} data={vol} />)
     ) : (
-      <div class="no-results">No results</div>
+      <div className="no-results">No results</div>
     );
 
     let searchOptions = this.state.searchOptions.map((e, key) => (
