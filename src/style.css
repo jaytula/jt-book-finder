@@ -191,4 +191,11 @@ header form {
   padding: 4px;
   background: white;
   margin: 4px;
+  opacity: 0.6;
+}
+
+.recent-items > button:hover {
+  opacity: 1;
+  font-weight: bold;
+  cursor: pointer;
 }
