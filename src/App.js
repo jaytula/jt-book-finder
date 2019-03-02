@@ -103,7 +103,6 @@ class App extends React.Component {
               <input
                 id="q"
                 type="text"
-                list="search-options"
                 name="q"
                 placeholder="Search"
                 autoComplete="off"
