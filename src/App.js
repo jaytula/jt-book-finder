@@ -95,7 +95,7 @@ class App extends React.Component {
       <option key={key} value={e} />
     ));
     return (
-      <div>
+      <div id="app" className={this.state.untouched ? 'untouched' : ''}>
         <header>
           <h1>Book Finder</h1>
           <div id="searchbox">
