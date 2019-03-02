@@ -22,7 +22,7 @@ class Recents extends React.Component {
         </div>
         <div className="recent-items">
           {data.map((e, key) => (
-            <button key={key} onClick={this.handleClick} value={e}>
+            <button title={e} key={key} onClick={this.handleClick} value={e}>
               {e}
             </button>
           ))}

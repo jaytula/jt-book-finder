@@ -157,6 +157,32 @@ header form {
   #results {
     justify-content: space-between;
   }
+  .recents-header {
+    padding: 4px 8px;
+    font-weight: bold;
+  }
+
+  .recent-items {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .recent-items > button {
+    padding: 4px;
+    background: white;
+    margin: 4px;
+    opacity: 0.6;
+    max-width: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .recent-items > button:hover {
+    opacity: 1;
+    outline: 1px solid orange;
+    cursor: pointer;
+  }
   .book-card {
     width: 49.9%;
   }
@@ -175,27 +201,4 @@ header form {
   text-align: center;
   width: 100%;
   padding: 80px;
-}
-
-.recents-header {
-  padding: 4px 8px;
-  font-weight: bold;
-}
-
-.recent-items {
-  display: flex;
-  flex-direction: row;
-}
-
-.recent-items > button {
-  padding: 4px;
-  background: white;
-  margin: 4px;
-  opacity: 0.6;
-}
-
-.recent-items > button:hover {
-  opacity: 1;
-  font-weight: bold;
-  cursor: pointer;
 }
