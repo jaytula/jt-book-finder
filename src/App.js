@@ -77,6 +77,7 @@ class App extends React.Component {
         error: null,
         untouched: false,
       });
+      inputElem.value = q;
     } catch (error) {
       this.setState({loading: false, error, lastError: error});
       setTimeout(this.clearError, 2000);
