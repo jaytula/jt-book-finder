@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import BookCard from './BookCard';
 import Button from './Button';
+import Recents from './Recents';
 
 require('./style.css');
 
@@ -16,8 +17,10 @@ class App extends React.Component {
       searchOptions: [],
       error: null,
       lastError: null,
+      untouched: true,
     };
 
+    this.submitHandler = this.submitHandler.bind(this);
     this.doSearch = this.doSearch.bind(this);
     this.clearError = this.clearError.bind(this);
     this.getSearchOptions = this.getSearchOptions.bind(this);
@@ -52,11 +55,15 @@ class App extends React.Component {
     this.setState({error: null});
   }
 
-  async doSearch(event) {
+  async submitHandler(event) {
     event.preventDefault();
     let formData = new FormData(event.target);
     let q = formData.get('q');
     this.addSearchOption(q);
+    await this.doSearch(q);
+  }
+
+  async doSearch(q) {
     let inputElem = document.getElementById('q');
     inputElem.select();
     inputElem.blur();
@@ -64,7 +71,12 @@ class App extends React.Component {
       this.setState({loading: true});
       let result = await axios.get('/lookup', {params: {q}});
       let {data} = result;
-      this.setState({volumes: data.items, loading: false, error: null});
+      this.setState({
+        volumes: data.items,
+        loading: false,
+        error: null,
+        untouched: false,
+      });
     } catch (error) {
       this.setState({loading: false, error, lastError: error});
       setTimeout(this.clearError, 2000);
@@ -87,7 +99,7 @@ class App extends React.Component {
         <header>
           <h1>Book Finder</h1>
           <div id="searchbox">
-            <form onSubmit={this.doSearch}>
+            <form onSubmit={this.submitHandler}>
               <input
                 id="q"
                 type="text"
@@ -103,6 +115,9 @@ class App extends React.Component {
               </Button>
             </form>
           </div>
+          {this.state.searchOptions.length ? (
+            <Recents data={this.state.searchOptions} doSearch={this.doSearch} />
+          ) : null}
         </header>
 
         <div id="results">{volumeElems}</div>
