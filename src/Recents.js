@@ -3,13 +3,17 @@ import React from 'react';
 class Recents extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      disabled: false,
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   async handleClick(event) {
-    console.log(event.target.value);
+    this.setState({disabled: true});
     await this.props.doSearch(event.target.value);
+    this.setState({disabled: false});
   }
 
   render() {
@@ -22,7 +26,12 @@ class Recents extends React.Component {
         </div>
         <div className="recent-items">
           {data.map((e, key) => (
-            <button title={e} key={key} onClick={this.handleClick} value={e}>
+            <button
+              title={e}
+              key={key}
+              onClick={this.handleClick}
+              disabled={this.state.disabled}
+              value={e}>
               {e}
             </button>
           ))}
