@@ -32,6 +32,8 @@ class App extends React.Component {
     localStorage.removeItem('searchOptions');
     localStorage.removeItem('searched');
     localStorage.removeItem('searchedVolumes');
+    let inputElem = document.getElementById('q');
+    inputElem.value = '';
     this.setState({
       untouched: true,
       volumes: [],
