@@ -47,8 +47,21 @@ class App extends React.Component {
     localStorage.setItem('searchOptions', JSON.stringify(options));
     this.getSearchOptions();
   }
-  componentDidMount() {
+  async componentDidMount() {
     this.getSearchOptions();
+
+    try {
+      let q = localStorage.getItem('searched');
+      let volumes = JSON.parse(localStorage.getItem('searchedVolumes'));
+      if (q && volumes.length) {
+        this.setState({
+          volumes,
+          untouched: false,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   clearError() {
@@ -78,6 +91,8 @@ class App extends React.Component {
         untouched: false,
       });
       inputElem.value = q;
+      localStorage.setItem('searched', q);
+      localStorage.setItem('searchedVolumes', JSON.stringify(data.items));
     } catch (error) {
       this.setState({loading: false, error, lastError: error});
       setTimeout(this.clearError, 2000);
