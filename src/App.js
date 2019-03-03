@@ -143,7 +143,7 @@ class App extends React.Component {
               </Button>
             </form>
           </div>
-          {this.state.searchOptions.length ? (
+          {!this.state.untouched && this.state.searchOptions.length ? (
             <Recents
               data={this.state.searchOptions}
               doSearch={this.doSearch}
