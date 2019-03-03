@@ -105,6 +105,7 @@ class App extends React.Component {
                 id="q"
                 type="text"
                 name="q"
+                disabled={this.state.loading}
                 placeholder="Search"
                 autoComplete="off"
                 spellCheck={false}
@@ -138,11 +139,3 @@ class App extends React.Component {
 }
 
 export default hot(App);
-
-/*
- *
- * Need a function to get from localStorange and return an empty array or current array.  This needs to be called at componentDidMount and result used to set the state.  Also called after an add.
- * Need a function to add to localStorage.  This needs called after a search.  The operation of add.  Check if exists with indexOf before adding.
- *
- *
- */
