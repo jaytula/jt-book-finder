@@ -25,6 +25,18 @@ class App extends React.Component {
     this.clearError = this.clearError.bind(this);
     this.getSearchOptions = this.getSearchOptions.bind(this);
     this.addSearchOption = this.addSearchOption.bind(this);
+    this.clearAction = this.clearAction.bind(this);
+  }
+
+  clearAction(event) {
+    localStorage.removeItem('searchOptions');
+    localStorage.removeItem('searched');
+    localStorage.removeItem('searchedVolumes');
+    this.setState({
+      untouched: true,
+      volumes: [],
+      searchOptions: [],
+    });
   }
 
   getSearchOptions() {
@@ -132,7 +144,11 @@ class App extends React.Component {
             </form>
           </div>
           {this.state.searchOptions.length ? (
-            <Recents data={this.state.searchOptions} doSearch={this.doSearch} />
+            <Recents
+              data={this.state.searchOptions}
+              doSearch={this.doSearch}
+              clearAction={this.clearAction}
+            />
           ) : null}
         </header>
 

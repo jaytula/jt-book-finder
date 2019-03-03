@@ -215,3 +215,21 @@ header form {
   width: 100%;
   padding: 80px;
 }
+
+.clear-button {
+  flex: 1;
+  text-align: right;
+}
+
+.clear-button button {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-style: none;
+  opacity: 0.75;
+}
+
+.clear-button button:hover {
+  opacity: 1;
+}

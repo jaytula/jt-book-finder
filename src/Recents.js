@@ -17,7 +17,7 @@ class Recents extends React.Component {
   }
 
   render() {
-    let {data, doSearch} = this.props;
+    let {data, doSearch, clearAction} = this.props;
 
     return (
       <div className="recents">
@@ -35,6 +35,9 @@ class Recents extends React.Component {
               {e}
             </button>
           ))}
+        </div>
+        <div className="clear-button" onClick={clearAction}>
+          <button>Clear</button>
         </div>
       </div>
     );
