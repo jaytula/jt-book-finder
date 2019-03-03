@@ -66,10 +66,12 @@ class App extends React.Component {
       let q = localStorage.getItem('searched');
       let volumes = JSON.parse(localStorage.getItem('searchedVolumes'));
       if (q && volumes.length) {
+        let inputElem = document.getElementById('q');
         this.setState({
           volumes,
           untouched: false,
         });
+        inputElem.value = q;
       }
     } catch (err) {
       console.log(err);

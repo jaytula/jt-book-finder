@@ -225,7 +225,8 @@ header form {
   background: red;
   color: white;
   font-weight: bold;
-  padding: 6px 8px;
+  padding: 6px 10px;
+  margin: 4px;
   border-style: none;
   opacity: 0.75;
 }
