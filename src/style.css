@@ -3,6 +3,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  background: #505160;
 }
 
 #app-container {
@@ -18,7 +19,8 @@ body {
 }
 
 header {
-  background: #e1e8f0;
+  background: #336b87;
+  color: white;
   padding: 4px 10px;
 }
 
@@ -59,7 +61,7 @@ header form {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  background: #efefef;
+  background: #f4f4f4;
   color: black;
   margin: 2px 0px;
   padding: 4px 0px;
@@ -102,7 +104,7 @@ div.book-card-left a:visited {
 .book-card-right h3 {
   margin: 0px;
   padding: 4px 0px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .book-card a:link,
