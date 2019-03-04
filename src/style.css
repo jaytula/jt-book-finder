@@ -73,6 +73,12 @@ header form {
   padding: 4px 6px;
 }
 
+div.book-card-left a:link,
+div.book-card-left a:visited {
+  color: black;
+  text-decoration: none;
+}
+
 .book-card-left img {
   box-shadow: 2px 2px 2px 1px #333;
   width: 128px;
